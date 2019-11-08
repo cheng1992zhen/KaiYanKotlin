@@ -5,8 +5,7 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import com.example.kotlindemo.App
-import com.example.kotlindemo.MainActivity
+import com.example.kotlindemo.base.App
 import com.example.kotlindemo.R
 import com.example.kotlindemo.base.BaseActivity
 import com.example.kotlindemo.util.AppUtils
@@ -33,16 +32,16 @@ class SplashActivity : BaseActivity() {
         tv_app_name.typeface = textTypeFace
         tv_splash_desc.typeface = descTypeFace
         tv_version_name.text = "v${AppUtils.getVerName(this)}"
-        alphaAnimation = AlphaAnimation(0.3f, 0.1f)
+        alphaAnimation = AlphaAnimation(0.3f, 1f)
         alphaAnimation?.duration = 2000
         //匿名内部类写法
         alphaAnimation?.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationRepeat(animation: Animation?) {
-                goToMain()
+
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-
+                goToMain()
             }
 
             override fun onAnimationStart(animation: Animation?) {
@@ -63,10 +62,11 @@ class SplashActivity : BaseActivity() {
     fun goToMain() {
         var intent: Intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
-    fun checkPermission() {
-        var perms = arrayOf(
+    private fun checkPermission() {
+        val perms = arrayOf(
             Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
         )

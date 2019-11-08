@@ -1,4 +1,4 @@
-package com.example.kotlindemo
+package com.example.kotlindemo.util
 
 import android.content.Context
 import android.widget.Toast

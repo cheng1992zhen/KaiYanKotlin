@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kotlindemo.showToast
+import com.example.kotlindemo.util.showToast
 import com.example.kotlindemo.widget.MultipleStatusView
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions

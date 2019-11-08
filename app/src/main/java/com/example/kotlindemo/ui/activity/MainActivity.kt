@@ -1,9 +1,10 @@
-package com.example.kotlindemo
+package com.example.kotlindemo.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import com.example.kotlindemo.R
+import com.example.kotlindemo.util.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
