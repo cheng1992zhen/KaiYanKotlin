@@ -1,11 +1,12 @@
 package com.example.kotlindemo.ui.fragment
 
 import android.os.Bundle
+import com.example.kotlindemo.R
 import com.example.kotlindemo.base.BaseFragment
 import com.example.kotlindemo.mvp.contract.HomeContract
 import com.example.kotlindemo.mvp.model.bean.HomeBean
 
-class HomeFragment : BaseFragment() ,HomeContract.View{
+class HomeFragment : BaseFragment(), HomeContract.View {
     override fun setHomeData(homeBean: HomeBean) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -27,9 +28,7 @@ class HomeFragment : BaseFragment() ,HomeContract.View{
     }
 
     private var mTitle: String? = null
-    override fun getLayoutId(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getLayoutId(): Int = R.layout.fragment_home
 
     override fun initView() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
