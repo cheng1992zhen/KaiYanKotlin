@@ -1,6 +1,7 @@
 package com.example.kotlindemo.base
 
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 open class BasePresenter<T : IView> : IPresenter<T> {
 
@@ -28,7 +29,12 @@ open class BasePresenter<T : IView> : IPresenter<T> {
         }
 
     }
+
+    fun addSubscription(disposable: Disposable) {
+        compositeDisposable.add(disposable)
+    }
 }
+
 
 private class MvpViewNotAttachedException internal constructor() :
     RuntimeException("Please call IPresenter.attachView(IBaseView) before" + " requesting data to the IPresenter")

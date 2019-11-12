@@ -28,23 +28,17 @@ abstract class BaseFragment : Fragment(), EasyPermissions.PermissionCallbacks {
      */
     protected var mLayoutStatusView: MultipleStatusView? = null
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        isViewPrepare = true
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(getLayoutId(),null)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(getLayoutId(), null)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         isViewPrepare = true
         initView()
         lazyLoadDataIfPrepared()
         //多种状态切换的view 重试点击事件
         mLayoutStatusView?.setOnRetryClickListener(mRetryClickListener)
-
     }
 
     open val mRetryClickListener: View.OnClickListener = View.OnClickListener {
@@ -63,6 +57,11 @@ abstract class BaseFragment : Fragment(), EasyPermissions.PermissionCallbacks {
             lazyLoad()
             hasLoadData = true;
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
     }
 
     /**

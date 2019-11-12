@@ -34,7 +34,7 @@
                 app:loadingView="@layout/layout_loading_view"
                 app:noNetworkView="@layout/layout_network_view">
 
-                <androidx.appcompat.app.AlertController.RecycleListView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/mRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -43,7 +43,7 @@
 
             </com.example.kotlindemo.widget.MultipleStatusView>
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
@@ -77,10 +77,9 @@
 
                 </RelativeLayout>
 
-            </android.support.v7.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
         </FrameLayout>
-
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 

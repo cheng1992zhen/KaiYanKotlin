@@ -51,7 +51,6 @@ class MainActivity : BaseActivity() {
         if (savedInstanceState != null) {
             mIndex = savedInstanceState.getInt("currTabIndex")
         }
-
         initTab()
         tab_layout.currentTab = mIndex
         switchFragment(mIndex)
@@ -128,6 +127,9 @@ class MainActivity : BaseActivity() {
                     transaction.add(R.id.fl_container, it, "mine")
                 }
         }
+        mIndex = position
+        tab_layout.currentTab = mIndex
+        transaction.commitAllowingStateLoss()
     }
 
     /**
