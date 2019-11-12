@@ -53,9 +53,9 @@ abstract class BaseFragment : Fragment(), EasyPermissions.PermissionCallbacks {
     }
 
     private fun lazyLoadDataIfPrepared() {
-        if (isViewPrepare && userVisibleHint && hasLoadData) {
+        if (userVisibleHint && isViewPrepare && !hasLoadData) {
             lazyLoad()
-            hasLoadData = true;
+            hasLoadData = true
         }
     }
 

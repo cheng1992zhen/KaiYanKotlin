@@ -69,7 +69,8 @@ object RetrofitManager {
             val originalRequest = chain.request()
             val requestBuilder = originalRequest.newBuilder()
                 // Provide your custom header here
-                .header("token", token)
+                    //TODO token 给的空
+                .header("token", "")
                 .method(originalRequest.method(), originalRequest.body())
             val request = requestBuilder.build()
             chain.proceed(request)
