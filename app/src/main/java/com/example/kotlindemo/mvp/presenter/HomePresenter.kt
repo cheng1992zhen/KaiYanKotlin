@@ -87,7 +87,6 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
                     }
                 })
 
-
         }
         if (disposable != null) {
             addSubscription(disposable)

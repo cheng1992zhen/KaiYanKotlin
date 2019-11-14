@@ -102,22 +102,6 @@ class HomeFragment : BaseFragment(), HomeContract.View {
         mRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, newState: Int) {
                 super.onScrolled(recyclerView, dx, newState)
-                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    val childCount = mRecyclerView.childCount
-                    val itemCount = mRecyclerView.layoutManager?.itemCount
-                    val firstVisibleItem =
-                        (mRecyclerView.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
-                    if (firstVisibleItem + childCount == itemCount) {
-                        if (!loadingMore) {
-                            loadingMore = true
-                            mPresenter.loadMoreData()
-                        }
-                    }
-                }
-            }
-
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
 
                 val currentVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition()
                 if (currentVisibleItemPosition == 0) {
@@ -136,6 +120,22 @@ class HomeFragment : BaseFragment(), HomeContract.View {
                             tv_header_title.text = item.data?.text
                         } else {
                             tv_header_title.text = simpleDateFormat.format(item.data?.date)
+                        }
+                    }
+                }
+            }
+
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    val childCount = mRecyclerView.childCount
+                    val itemCount = mRecyclerView.layoutManager?.itemCount
+                    val firstVisibleItem =
+                        (mRecyclerView.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+                    if (firstVisibleItem + childCount == itemCount) {
+                        if (!loadingMore) {
+                            loadingMore = true
+                            mPresenter.loadMoreData()
                         }
                     }
                 }

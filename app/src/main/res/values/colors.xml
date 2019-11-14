@@ -7,7 +7,7 @@
     <color name="color_gray">#9a9a9a</color>
 
     <color name="color_gray_translucent">#5000</color>
-
+    <color name="white">#ffffff</color>
 
     <color name="app_color_theme_1">#EF5362</color> <!-- Grapefruit -->
     <color name="app_color_theme_2">#FE6D4B</color> <!-- Bittersweet -->
@@ -22,6 +22,7 @@
     <color name="color_pink">#ff4081</color>
     <color name="color_orange">#dd2c00</color>
     <color name="color_blue_dark">#ee447AA4</color>
+
 
 
 
