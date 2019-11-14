@@ -3,9 +3,10 @@ package com.example.kotlindemo.base
 import android.app.Application
 import android.content.Context
 import android.util.Log
+import androidx.multidex.MultiDexApplication
 import kotlin.properties.Delegates
 
-class App : Application() {
+class App : MultiDexApplication() {
     private val TAG = this::class.java.simpleName
     companion object {
         var context: Context by Delegates.notNull()

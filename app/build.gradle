@@ -18,7 +18,7 @@ android {
         // 实现毛玻璃那种透明的效果需要添加的库
         renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
-
+        multiDexEnabled true
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath true
@@ -109,7 +109,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // APT dependencies(Kotlin内置的注解处理器)
-  //  kapt "com.github.bumptech.glide:compiler:4.7.1"
+    //  kapt "com.github.bumptech.glide:compiler:4.7.1"
     // RxJava2
     implementation "io.reactivex.rxjava2:rxjava:2.2.14"
     implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
@@ -117,5 +117,12 @@ dependencies {
 
     implementation "com.android.support:support-annotations:24.2.0"
 
+    // 视屏播放器
+    implementation 'com.shuyu:GSYVideoPlayer:2.1.1'
+    //Logger
+    implementation 'com.orhanobut:logger:2.1.1'
+    //Google开源的一个布局控件
+     implementation 'com.google.android:flexbox:0.3.1'
 
+    implementation 'com.android.support:multidex:1.0.3'
 }
