@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.util.Log
 import androidx.multidex.MultiDexApplication
+import com.example.kotlindemo.util.DisplayManager
 import kotlin.properties.Delegates
 
 class App : MultiDexApplication() {
@@ -17,6 +18,7 @@ class App : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         context = applicationContext
+        DisplayManager.init(this)
         Log.d(TAG, "应用启动...")
     }
 }
